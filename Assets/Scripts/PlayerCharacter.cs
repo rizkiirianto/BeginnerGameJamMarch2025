@@ -12,6 +12,6 @@ public class PlayerCharacter : PlayerObject
         if (Input.GetButtonDown("Jump")) Jump();
     }
     private void Jump() {
-         thisRigidbody.AddForce(Vector3.up * verticalJump * Time.deltaTime);
+         thisRigidbody.AddForce(Vector3.up * verticalJump);
     }
 }
