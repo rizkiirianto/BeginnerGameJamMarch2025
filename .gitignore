@@ -1,1 +1,6 @@
 /Library
+/Logs
+/Logs
+*.log
+*.log
+/Temp

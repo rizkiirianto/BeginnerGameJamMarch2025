@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Beginner Game Jam March 2025.sln"
+    "dotnet.defaultSolution": "BeginnerGameJamMarch2025.sln"
 }
