@@ -13,7 +13,7 @@ public class PlayerShadow : PlayerObject
     private void Update()
     {
         shadowRigidbody.AddForce(Vector3.up * gravityScale);
-        if (Input.GetButtonDown("Jump")) Jump();
+        //if (Input.GetButtonDown("Jump")) Jump();
     }
 
     private void Jump() {
