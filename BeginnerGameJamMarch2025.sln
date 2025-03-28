@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastScriptReload.Editor", "FastScriptReload.Editor.csproj", "{03DC5B09-77BB-0409-8D38-A54FB3B8632D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{5E6344E9-5876-BF04-1169-7E2B8AA4D499}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{9286CFAE-7A7D-8CB4-2BF1-79E7D66906E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastScriptReload.Runtime", "FastScriptReload.Runtime.csproj", "{71D88BD3-ABF6-6B09-9D67-31EEAB7BF51A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +15,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03DC5B09-77BB-0409-8D38-A54FB3B8632D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DC5B09-77BB-0409-8D38-A54FB3B8632D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DC5B09-77BB-0409-8D38-A54FB3B8632D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DC5B09-77BB-0409-8D38-A54FB3B8632D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E6344E9-5876-BF04-1169-7E2B8AA4D499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E6344E9-5876-BF04-1169-7E2B8AA4D499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E6344E9-5876-BF04-1169-7E2B8AA4D499}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -19,6 +27,10 @@ Global
 		{9286CFAE-7A7D-8CB4-2BF1-79E7D66906E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9286CFAE-7A7D-8CB4-2BF1-79E7D66906E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9286CFAE-7A7D-8CB4-2BF1-79E7D66906E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D88BD3-ABF6-6B09-9D67-31EEAB7BF51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D88BD3-ABF6-6B09-9D67-31EEAB7BF51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D88BD3-ABF6-6B09-9D67-31EEAB7BF51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D88BD3-ABF6-6B09-9D67-31EEAB7BF51A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

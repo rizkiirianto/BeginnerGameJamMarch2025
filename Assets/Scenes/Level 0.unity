@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  verticalJump: 2
+  verticalJump: 4
 --- !u!4 &2014481633
 Transform:
   m_ObjectHideFlags: 0
@@ -3397,6 +3397,7 @@ GameObject:
   - component: {fileID: 2100880759}
   - component: {fileID: 2100880758}
   - component: {fileID: 2100880757}
+  - component: {fileID: 2100880760}
   m_Layer: 0
   m_Name: Player Shadow
   m_TagString: Untagged
@@ -3483,8 +3484,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  verticalJump: 300
-  gravityScale: 3
+  verticalJump: 4
+  gravityScale: 0.1
+--- !u!75 &2100880760
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100880752}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 10, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
