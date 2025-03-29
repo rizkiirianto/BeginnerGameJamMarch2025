@@ -4,6 +4,7 @@ public class PlayerObject : MonoBehaviour
 {
     public float speed;
     public float verticalJump;
+    public bool isGrounded;
 
     private void Update()
     {

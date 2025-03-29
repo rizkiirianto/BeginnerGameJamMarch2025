@@ -14,10 +14,13 @@ public class PlayerShadow : PlayerObject
     {
         //shadowRigidbody.AddForce(Vector3.up * gravityScale, ForceMode.Impulse);
         if (Input.GetButtonDown("Jump")) Jump();
+        isGrounded = Physics.Raycast(transform.position, Vector3.up, 1f);
     }
 
     private void Jump() {
-         shadowRigidbody.AddForce(Vector3.down * verticalJump, ForceMode.Impulse);
+        if(isGrounded) {
+            shadowRigidbody.AddForce(Vector3.down * verticalJump, ForceMode.Impulse);
+        }
     }
 
 }

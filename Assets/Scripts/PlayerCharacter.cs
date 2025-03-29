@@ -10,8 +10,11 @@ public class PlayerCharacter : PlayerObject
     private void Update()
     {
         if (Input.GetButtonDown("Jump")) Jump();
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f);
     }
     private void Jump() {
-         thisRigidbody.AddForce(Vector3.up * verticalJump, ForceMode.Impulse);
+        if(isGrounded) {
+            thisRigidbody.AddForce(Vector3.up * verticalJump, ForceMode.Impulse);
+        }
     }
 }
