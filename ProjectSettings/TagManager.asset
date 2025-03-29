@@ -10,6 +10,11 @@ TagManager:
   - mirror
   - door
   - floor
+  - exit mirror
+  - bridge
+  - hazard
+  - platform
+  - moving platform
   layers:
   - Default
   - TransparentFX
