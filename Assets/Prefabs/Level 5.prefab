@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 4030483434635601918}
   - component: {fileID: 1205104092461312195}
   - component: {fileID: 5376711367524124410}
+  - component: {fileID: 7938315275013627328}
   m_Layer: 0
   m_Name: Mov Platform
   m_TagString: moving platform
@@ -352,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 1165024738159468998}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -104.19, y: 0.58, z: -0.71}
+  m_LocalPosition: {x: -104.19, y: 6.49, z: -0.71}
   m_LocalScale: {x: 2.75, y: 0.61, z: 2.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -432,6 +433,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7938315275013627328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165024738159468998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f27d8e7d017a7a4799b269011d4622d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xThresholdUp: 6.5
+  xThresholdDown: 0.5
+  speedUp: 0
+  speedDown: 0
 --- !u!1 &1746985690683673687
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +569,7 @@ GameObject:
   - component: {fileID: 401746899869251453}
   - component: {fileID: 5072430798559379287}
   - component: {fileID: 2934109609554099857}
+  - component: {fileID: 16383489301942221}
   m_Layer: 0
   m_Name: Tembok Crusher
   m_TagString: hazard
@@ -568,7 +586,7 @@ Transform:
   m_GameObject: {fileID: 3058836350452132243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -98.8, y: -4.51, z: -0.71}
+  m_LocalPosition: {x: -98.8, y: -2.5, z: -0.71}
   m_LocalScale: {x: 2.96, y: 4.57, z: 2.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -648,6 +666,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &16383489301942221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058836350452132243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f27d8e7d017a7a4799b269011d4622d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xThresholdUp: -2.5
+  xThresholdDown: -5.5
+  speedUp: 10
+  speedDown: 2
 --- !u!1 &3091725793954984212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1637,7 @@ GameObject:
   - component: {fileID: 2931364057519324768}
   - component: {fileID: 6190410844767682899}
   - component: {fileID: 2454088687239363831}
+  - component: {fileID: 1005270550201021253}
   m_Layer: 0
   m_Name: Tembok Crusher (1)
   m_TagString: hazard
@@ -1619,8 +1654,8 @@ Transform:
   m_GameObject: {fileID: 8933279286481826754}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -91.78, y: 7.08, z: -0.71}
-  m_LocalScale: {x: 7.96, y: 4.57, z: 2.3}
+  m_LocalPosition: {x: -91.78, y: 6.08, z: -0.71}
+  m_LocalScale: {x: 7.96, y: 6.5, z: 2.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3064650429000482459}
@@ -1699,6 +1734,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1005270550201021253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933279286481826754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f27d8e7d017a7a4799b269011d4622d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xThresholdUp: 6
+  xThresholdDown: 3.5
+  speedUp: 0
+  speedDown: 0
 --- !u!1 &9157214642788400523
 GameObject:
   m_ObjectHideFlags: 0
