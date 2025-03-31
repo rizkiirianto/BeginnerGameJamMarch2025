@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerCharacter : PlayerObject
 {
     private Rigidbody thisRigidbody;
+    public bool charAlive;
     private void Start()
     {
         thisRigidbody = GetComponent<Rigidbody>();
