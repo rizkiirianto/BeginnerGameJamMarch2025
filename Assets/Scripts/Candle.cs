@@ -3,7 +3,7 @@ using UnityEngine;
 public class Candle : SwitchObject
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private bool hasEntered;
+    private bool shadowHasEntered;
     void Start()
     {
         
@@ -12,9 +12,9 @@ public class Candle : SwitchObject
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)&&hasEntered)
+        if(Input.GetKeyDown(KeyCode.E)&&shadowHasEntered)
         {
-            StartCoroutine(ScaleOverTime(1f,0.5f)); 
+            StartCoroutine(ScaleOverTimeOverworld(1f,0.5f)); 
         }
     }
 
@@ -23,7 +23,7 @@ public class Candle : SwitchObject
         if(other.gameObject.CompareTag("Shadow"))
         {
             Debug.Log("Bumped");
-            hasEntered=true;
+            shadowHasEntered=true;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -31,7 +31,7 @@ public class Candle : SwitchObject
         if(other.gameObject.CompareTag("Shadow"))
         {
             Debug.Log("Leave");
-            hasEntered=false;
+            shadowHasEntered=false;
         }
     }
     

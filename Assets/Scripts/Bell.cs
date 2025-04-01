@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bell : SwitchObject
 {
-    private bool hasEntered;
+    private bool playerHasEntered;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,9 +12,9 @@ public class Bell : SwitchObject
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)&&hasEntered)
+        if(Input.GetKeyDown(KeyCode.E)&&playerHasEntered)
         {
-            StartCoroutine(ScaleOverTime(1f,0.5f)); 
+            StartCoroutine(ScaleOverTimeUnderworld(1f,0.5f)); 
         }
     }
 
@@ -24,7 +24,7 @@ public class Bell : SwitchObject
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Bumped");
-            hasEntered=true;
+            playerHasEntered=true;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -32,7 +32,7 @@ public class Bell : SwitchObject
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Leave");
-            hasEntered=false;
+            playerHasEntered=false;
         }
     }
     
