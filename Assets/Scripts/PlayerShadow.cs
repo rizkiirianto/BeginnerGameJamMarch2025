@@ -9,27 +9,23 @@ public class PlayerShadow : PlayerObject
     private void Start()
     {
         shadowRigidbody = GetComponent<Rigidbody>();
+        shadowConstantForce = GetComponent<ConstantForce>();
     }
 
     private void Update()
     {
         if (!swapWorld) {
+
             if (Input.GetButtonDown("Jump")) Jump();
             isGrounded = Physics.Raycast(transform.position, Vector3.up, 1f);
         }
 
         else if (swapWorld) {
+            Debug.Log ("udah kebalik");
             if (Input.GetButtonDown("Jump")) MirrorJump();
             shadowConstantForce.enabled = false;
             shadowRigidbody.useGravity = true;
         }
-        
-    }
-    public void ShadowEnterMirror()
-    {
-        swapWorld = true; 
-        transform.position = new Vector3(transform.position.x, 0.75f, transform.position.z);
-        transform.Rotate(0f,0f,0f,Space.Self);
         
     }
 

@@ -10,7 +10,10 @@ public class PlayerObject : MonoBehaviour
     public SpriteRenderer shadowSpriteRenderer;
     public bool isGrounded;
     private bool isDead;
-    public bool swapWorld;
+    public static bool swapWorld;
+    public Transform playerPosition;
+    public Transform shadowPosition;
+    public bool playerCouldTransfer;
     
 
     private void Update()
@@ -42,6 +45,24 @@ public class PlayerObject : MonoBehaviour
         }
         */
 
+    }
+
+    public void TryMirrorSwap()
+    {
+        if (playerCouldTransfer && Input.GetKeyDown(KeyCode.F))
+        {
+            MirrorSwap();
+        }
+    }
+
+
+    public void MirrorSwap()
+    {
+        swapWorld = true; 
+        playerPosition.position = new Vector3(playerPosition.position.x, -0.75f, playerPosition.position.z);
+        playerPosition.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+        shadowPosition.position = new Vector3(shadowPosition.position.x, 0.75f, shadowPosition.position.z);
+        shadowPosition.Rotate(180f,0f,0f,Space.Self);
     }
     
 }

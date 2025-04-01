@@ -22,7 +22,6 @@ public class Candle : SwitchObject
     {
         if(other.gameObject.CompareTag("Shadow"))
         {
-            Debug.Log("Bumped");
             shadowHasEntered=true;
         }
     }
@@ -30,7 +29,6 @@ public class Candle : SwitchObject
     {
         if(other.gameObject.CompareTag("Shadow"))
         {
-            Debug.Log("Leave");
             shadowHasEntered=false;
         }
     }

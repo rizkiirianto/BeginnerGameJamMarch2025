@@ -843,8 +843,9 @@ MonoBehaviour:
   charSpriteRenderer: {fileID: 482453487}
   shadowSpriteRenderer: {fileID: 435765835}
   isGrounded: 0
-  targetPlayer: {fileID: 2014481633}
-  swapWorld: 0
+  playerPosition: {fileID: 2014481633}
+  shadowPosition: {fileID: 2100880756}
+  playerCouldTransfer: 0
 --- !u!1 &1974880988
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,8 +971,10 @@ MonoBehaviour:
   charSpriteRenderer: {fileID: 0}
   shadowSpriteRenderer: {fileID: 0}
   isGrounded: 0
-  targetPlayer: {fileID: 0}
-  swapWorld: 0
+  playerPosition: {fileID: 2014481633}
+  shadowPosition: {fileID: 2100880756}
+  playerCouldTransfer: 0
+  playerShadow: {fileID: 2100880759}
 --- !u!4 &2014481633
 Transform:
   m_ObjectHideFlags: 0
@@ -1157,8 +1160,9 @@ MonoBehaviour:
   charSpriteRenderer: {fileID: 0}
   shadowSpriteRenderer: {fileID: 0}
   isGrounded: 0
-  targetPlayer: {fileID: 0}
-  swapWorld: 0
+  playerPosition: {fileID: 2014481633}
+  shadowPosition: {fileID: 2100880756}
+  playerCouldTransfer: 0
   gravityScale: 0.1
 --- !u!75 &2100880760
 ConstantForce:
