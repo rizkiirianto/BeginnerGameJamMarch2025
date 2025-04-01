@@ -9,6 +9,8 @@ public class PlayerObject : MonoBehaviour
     public SpriteRenderer charSpriteRenderer;
     public SpriteRenderer shadowSpriteRenderer;
     public bool isGrounded;
+    public bool isGroundedPlayer;
+    public bool isGroundedShadow;
     private bool isDead;
     public static bool swapWorld;
     public Transform playerPosition;
@@ -23,25 +25,29 @@ public class PlayerObject : MonoBehaviour
             if (!swapWorld) {
                 if (playerPosition.position.y < 0 ) {
                     isDead = true;
+                    animatorChar.Play("CharacterDeath");
                 }
                 if (shadowPosition.position.y > 0) {
                     isDead = true;
+                    animatorShadow.Play("ShadowDeath");
                 }
             }
+            //isGroundedPlayer = Physics.Raycast(playerPosition.position, Vector3.down, 0.5f);
+            //isGroundedShadow = Physics.Raycast(shadowPosition.position, Vector3.up, 0.5f);
             if(Input.GetKey(KeyCode.A)) {
                 transform.Translate(Vector3.left * Time.deltaTime * speed);
-                animatorChar.Play("CharacterRun");
-                animatorShadow.Play("ShadowRun");
                 charSpriteRenderer.flipX = true;
                 shadowSpriteRenderer.flipX = true;
+                animatorChar.Play("CharacterRun");
+                animatorShadow.Play("ShadowRun");
                
             }
         if(Input.GetKey(KeyCode.D)) {
                 transform.Translate(Vector3.right * Time.deltaTime * speed);
-                animatorChar.Play("CharacterRun");
-                animatorShadow.Play("ShadowRun");
                 charSpriteRenderer.flipX = false;
                 shadowSpriteRenderer.flipX = false;
+                animatorChar.Play("CharacterRun");
+                animatorShadow.Play("ShadowRun");
             }
         }
 

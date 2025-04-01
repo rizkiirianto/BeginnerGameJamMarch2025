@@ -4,6 +4,7 @@ public class Candle : SwitchObject
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private bool shadowHasEntered;
+    public Animator candleAnimator;
     void Start()
     {
         
@@ -15,6 +16,7 @@ public class Candle : SwitchObject
         if(Input.GetKeyDown(KeyCode.E)&&shadowHasEntered)
         {
             StartCoroutine(ScaleOverTimeOverworld(1f,0.5f)); 
+            candleAnimator.Play("CandleDie");
         }
     }
 

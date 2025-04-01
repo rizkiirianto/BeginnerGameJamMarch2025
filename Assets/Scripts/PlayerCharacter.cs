@@ -32,12 +32,14 @@ public class PlayerCharacter : PlayerObject
     private void Jump() {
         if(isGrounded) {
             thisRigidbody.AddForce(Vector3.up * verticalJump, ForceMode.Impulse);
+            animatorChar.Play("CharacterJump");
         }
     }
 
     private void MirrorJump() {
         if(isGrounded) {
             thisRigidbody.AddForce(Vector3.down * verticalJump, ForceMode.Impulse);
+            animatorChar.Play("CharacterJump");
         }
     }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class SwitchObject : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject redWall; // Make sure this is assigned in the Inspector
+    public GameObject redWall; 
     public float moveDistance = 5f;
     public float moveSpeed = 2f;
     //private bool hasEntered;
