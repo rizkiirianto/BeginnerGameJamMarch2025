@@ -17,7 +17,9 @@ public class Bell : SwitchObject
             StartCoroutine(ScaleOverTime(1f,0.5f)); 
         }
     }
-    public override void OnTriggerEnter(Collider other)
+
+    
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
@@ -25,7 +27,7 @@ public class Bell : SwitchObject
             hasEntered=true;
         }
     }
-    public override void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
@@ -33,4 +35,6 @@ public class Bell : SwitchObject
             hasEntered=false;
         }
     }
+    
+    
 }

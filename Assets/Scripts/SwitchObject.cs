@@ -25,8 +25,9 @@ public class SwitchObject : MonoBehaviour
     }
     public virtual void PlayerEntered()
     {
-
+        
     }
+    /*
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Bumped");
@@ -37,7 +38,9 @@ public class SwitchObject : MonoBehaviour
         Debug.Log("Leave");
         hasEntered=false;
     }
-    private IEnumerator ScaleOverTime(float duration, float scale) {
+    */
+    
+    public IEnumerator ScaleOverTime(float duration, float scale) {
         var startScale = redWall.transform.localScale;
         var endScale = new Vector3(transform.localScale.x,0,transform.localScale.z);
         var elapsed = 0f;

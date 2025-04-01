@@ -17,7 +17,8 @@ public class Candle : SwitchObject
             StartCoroutine(ScaleOverTime(1f,0.5f)); 
         }
     }
-    public override void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Shadow"))
         {
@@ -25,7 +26,7 @@ public class Candle : SwitchObject
             hasEntered=true;
         }
     }
-    public override void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.CompareTag("Shadow"))
         {
@@ -33,4 +34,5 @@ public class Candle : SwitchObject
             hasEntered=false;
         }
     }
+    
 }
