@@ -17,12 +17,12 @@ public class PlayerCharacter : PlayerObject
         if (!swapWorld) {
             if (Input.GetButtonDown("Jump")) Jump();
             isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f);
-            
             // Check for Mirror Swap here
             TryMirrorSwap();
+            thisConstantForce.enabled = false;
+            thisRigidbody.useGravity = true;
         }
         else if (swapWorld) {
-            
             if (Input.GetButtonDown("Jump")) MirrorJump();
             thisConstantForce.enabled = true;
             thisRigidbody.useGravity = false;
