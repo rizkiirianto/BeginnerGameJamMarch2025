@@ -9,9 +9,8 @@ public class PlayerObject : MonoBehaviour
     public SpriteRenderer charSpriteRenderer;
     public SpriteRenderer shadowSpriteRenderer;
     public bool isGrounded;
-    public Transform charPosition;
-    public Transform shadowPosition;
     private bool isDead;
+    public bool swapWorld;
     
 
     private void Update()
@@ -34,13 +33,15 @@ public class PlayerObject : MonoBehaviour
             }
         }
 
+        /*
         if (charPosition.position.y < 0 ) {
             isDead = true;
         }
         if (shadowPosition.position.y > 0) {
             isDead = true;
         }
+        */
 
     }
-
+    
 }

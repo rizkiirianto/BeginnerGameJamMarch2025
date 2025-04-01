@@ -843,8 +843,8 @@ MonoBehaviour:
   charSpriteRenderer: {fileID: 482453487}
   shadowSpriteRenderer: {fileID: 435765835}
   isGrounded: 0
-  charPosition: {fileID: 2014481633}
-  shadowPosition: {fileID: 2100880756}
+  targetPlayer: {fileID: 2014481633}
+  swapWorld: 0
 --- !u!1 &1974880988
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +943,7 @@ GameObject:
   - component: {fileID: 2014481632}
   - component: {fileID: 2014481635}
   - component: {fileID: 2014481634}
+  - component: {fileID: 2014481636}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Player
@@ -969,9 +970,8 @@ MonoBehaviour:
   charSpriteRenderer: {fileID: 0}
   shadowSpriteRenderer: {fileID: 0}
   isGrounded: 0
-  charPosition: {fileID: 0}
-  shadowPosition: {fileID: 0}
-  charAlive: 0
+  targetPlayer: {fileID: 0}
+  swapWorld: 0
 --- !u!4 &2014481633
 Transform:
   m_ObjectHideFlags: 0
@@ -1039,6 +1039,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!75 &2014481636
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014481631}
+  m_Enabled: 0
+  m_Force: {x: 0, y: 10, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1 &2100880752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,8 +1157,8 @@ MonoBehaviour:
   charSpriteRenderer: {fileID: 0}
   shadowSpriteRenderer: {fileID: 0}
   isGrounded: 0
-  charPosition: {fileID: 0}
-  shadowPosition: {fileID: 0}
+  targetPlayer: {fileID: 0}
+  swapWorld: 0
   gravityScale: 0.1
 --- !u!75 &2100880760
 ConstantForce:
