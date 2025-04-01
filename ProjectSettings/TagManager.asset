@@ -15,6 +15,7 @@ TagManager:
   - hazard
   - platform
   - moving platform
+  - Shadow
   layers:
   - Default
   - TransparentFX

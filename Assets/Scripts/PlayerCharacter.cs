@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : PlayerObject
 {
@@ -16,6 +17,14 @@ public class PlayerCharacter : PlayerObject
     private void Jump() {
         if(isGrounded) {
             thisRigidbody.AddForce(Vector3.up * verticalJump, ForceMode.Impulse);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("door")) {
+            StaticData.level++;
+            SceneManager.LoadScene(0);
         }
     }
 }
