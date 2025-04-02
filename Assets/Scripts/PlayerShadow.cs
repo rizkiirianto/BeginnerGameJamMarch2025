@@ -21,14 +21,40 @@ public class PlayerShadow : PlayerObject
             isGrounded = Physics.Raycast(transform.position, Vector3.up, 1f);
             shadowConstantForce.enabled = true;
             shadowRigidbody.useGravity = false;
+            if (!isDead) {
+                if (isGrounded && isMoving) {
+                animatorShadow.Play("ShadowRun");
+            }
+
+            if (isGrounded && !isMoving) {
+                animatorShadow.Play("NewShadowIdle");
+            }
+
+            if (!isGrounded) {
+                animatorShadow.Play("ShadowJump");
+            }
+            }
+            
         }
 
         else if (swapWorld) {
-            Debug.Log ("udah kebalik");
             if (Input.GetButtonDown("Jump")) MirrorJump();
+            isGroundedSwap = Physics.Raycast(transform.position, Vector3.down, 1f);
             shadowConstantForce.enabled = false;
             shadowRigidbody.useGravity = true;
             TryMirrorExit();
+            if (!isDead) {
+                 if (isGroundedSwap && isMoving) {
+                animatorShadow.Play("ShadowRun");
+            }
+            if (isGroundedSwap && !isMoving) {
+                animatorShadow.Play("NewShadowIdle");
+            }
+            if (!isGroundedSwap) {
+                animatorShadow.Play("ShadowJump");
+            }
+            }
+           
         }
         
     }
@@ -40,7 +66,7 @@ public class PlayerShadow : PlayerObject
     }
 
     private void MirrorJump() {
-        if(isGrounded) {
+        if(isGroundedSwap) {
             shadowRigidbody.AddForce(Vector3.up * verticalJump, ForceMode.Impulse);
         }
     }

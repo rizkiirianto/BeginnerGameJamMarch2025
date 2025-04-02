@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerObject : MonoBehaviour
 {
@@ -9,14 +10,15 @@ public class PlayerObject : MonoBehaviour
     public SpriteRenderer charSpriteRenderer;
     public SpriteRenderer shadowSpriteRenderer;
     public bool isGrounded;
-    public bool isGroundedPlayer;
-    public bool isGroundedShadow;
-    private bool isDead;
+    public bool isGroundedSwap;
+    public static bool isMoving;
+    public static bool isDead;
     public static bool swapWorld;
     public Transform playerPosition;
     public Transform shadowPosition;
     public bool playerCouldTransfer;
     public bool playerCouldExit;
+    public TimerScript mirrorTimer;
     
 
     private void Update()
@@ -25,32 +27,53 @@ public class PlayerObject : MonoBehaviour
             if (!swapWorld) {
                 if (playerPosition.position.y < 0 ) {
                     isDead = true;
-                    animatorChar.Play("CharacterDeath");
                 }
                 if (shadowPosition.position.y > 0) {
                     isDead = true;
-                    animatorShadow.Play("ShadowDeath");
                 }
             }
-            //isGroundedPlayer = Physics.Raycast(playerPosition.position, Vector3.down, 0.5f);
-            //isGroundedShadow = Physics.Raycast(shadowPosition.position, Vector3.up, 0.5f);
+
+            if (swapWorld) {
+                if (playerPosition.position.y > 0 ) {
+                    isDead = true;
+                }
+                if (shadowPosition.position.y < 0) {
+                    isDead = true;
+                }
+            }
+            isMoving = false;
             if(Input.GetKey(KeyCode.A)) {
                 transform.Translate(Vector3.left * Time.deltaTime * speed);
                 charSpriteRenderer.flipX = true;
                 shadowSpriteRenderer.flipX = true;
-                animatorChar.Play("CharacterRun");
-                animatorShadow.Play("ShadowRun");
-               
+                isMoving = true;
             }
-        if(Input.GetKey(KeyCode.D)) {
+            if(Input.GetKey(KeyCode.D)) {
                 transform.Translate(Vector3.right * Time.deltaTime * speed);
                 charSpriteRenderer.flipX = false;
                 shadowSpriteRenderer.flipX = false;
-                animatorChar.Play("CharacterRun");
-                animatorShadow.Play("ShadowRun");
+                isMoving = true;
+            }
+
+            if (mirrorTimer.timeLeft == 0) {
+                isDead = true;
             }
         }
+        else {
+            animatorChar.Play("CharacterDeath");
+            animatorShadow.Play("ShadowDeath");
+        }
 
+        if (Input.GetKeyDown(KeyCode.R))
+            {
+                RestartLevel();
+                isDead = false;
+            }
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(0); // Reload the scene (GameManager will reload the level)
     }
 
     public void TryMirrorSwap()
@@ -77,6 +100,7 @@ public class PlayerObject : MonoBehaviour
         playerPosition.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
         shadowPosition.position = new Vector3(shadowPosition.position.x, 0.75f, shadowPosition.position.z);
         shadowPosition.Rotate(180f,0f,0f,Space.Self);
+        mirrorTimer.TimerOn = true;
     }
 
     public void MirrorExit()
@@ -86,6 +110,7 @@ public class PlayerObject : MonoBehaviour
         shadowPosition.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
         playerPosition.position = new Vector3(playerPosition.position.x, 0.75f, playerPosition.position.z);
         playerPosition.Rotate(180f,0f,0f,Space.Self);
+        mirrorTimer.TimerOn = false;
     }
     
 }
