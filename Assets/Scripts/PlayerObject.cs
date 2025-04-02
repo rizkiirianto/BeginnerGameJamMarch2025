@@ -68,7 +68,10 @@ public class PlayerObject : MonoBehaviour
             {
                 RestartLevel();
                 isDead = false;
+                mirrorTimer.timeLeft = mirrorTimer.startTime;
+                swapWorld = false;
             }
+            Debug.Log (isDead);
     }
 
     private void RestartLevel()

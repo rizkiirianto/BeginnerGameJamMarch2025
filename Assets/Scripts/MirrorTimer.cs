@@ -5,7 +5,7 @@ using TMPro;
 public class TimerScript : MonoBehaviour
 {
     public float timeLeft;
-    private float startTime;
+    public float startTime;
     public bool TimerOn = false;
 
     public Canvas mirrorSwapCanvas;

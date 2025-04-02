@@ -252,7 +252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 413.6, y: 250.6}
+  m_AnchoredPosition: {x: 247.1, y: 250.6}
   m_SizeDelta: {x: 538.4, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &257607244
@@ -1003,6 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLeft: 15
+  startTime: 0
   TimerOn: 0
   mirrorSwapCanvas: {fileID: 816957891}
   TimerTxt: {fileID: 6338404}
@@ -1609,7 +1610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186.9, y: 300.1}
+  m_AnchoredPosition: {x: 22.47, y: 300.1}
   m_SizeDelta: {x: 538.4, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1843520560
