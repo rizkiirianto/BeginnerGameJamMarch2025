@@ -4,6 +4,7 @@ public class BellBridges : SwitchObject
 {
     private bool playerHasEntered;
     public AudioSource bellSFX;
+    public AudioSource obstacleSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +18,7 @@ public class BellBridges : SwitchObject
         {
             StartCoroutine(Bridge(1f,0.5f)); 
             bellSFX.Play();
+            obstacleSFX.Play();
         }
     }
 

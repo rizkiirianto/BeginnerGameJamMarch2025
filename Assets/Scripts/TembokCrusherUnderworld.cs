@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TembokCrusher : MonoBehaviour
+public class TembokCrusherUnderworld : MonoBehaviour
 {
     public float xThresholdUp;
     public float xThresholdDown;
@@ -10,8 +10,7 @@ public class TembokCrusher : MonoBehaviour
     private float currentSpeed;
     // Update is called once per frame
     private bool isGoingUp;
-    public AudioSource hammerSFX;
-
+    public AudioSource movingPlatformSFX;
     private void Update()
     {
         currentSpeed = isGoingUp ? speedUp : speedDown;
@@ -23,20 +22,6 @@ public class TembokCrusher : MonoBehaviour
             isGoingUp = true;
         }
 
-        if (transform.position.y < 2.5f && transform.position.y > 0.0f ) {
-            hammerSFX.Play();
-        }
-
-        if (transform.position.y > -2.3f && transform.position.y < 0.0f) {
-            hammerSFX.Play();
-        }
-
-        if (transform.position.y > 6.3f && transform.position.y < 6.5f) {
-            hammerSFX.Play();
-        }
-
-        if (transform.position.y > 5.90f && transform.position.y < 5.96f) {
-            hammerSFX.Play();
-        }
+        
     }
 }

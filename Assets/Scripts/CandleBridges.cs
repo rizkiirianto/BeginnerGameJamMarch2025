@@ -6,6 +6,7 @@ public class CandleBridges : SwitchObject
     private bool shadowHasEntered;
     public Animator candleAnimator;
     public AudioSource candleSFX;
+    public AudioSource  obstacleSFX;
     void Start()
     {
         
@@ -19,6 +20,7 @@ public class CandleBridges : SwitchObject
             StartCoroutine(Bridge(1f,0.5f)); 
             candleAnimator.Play("CandleDie");
             candleSFX.Play();
+            obstacleSFX.Play();
         }
     }
 
