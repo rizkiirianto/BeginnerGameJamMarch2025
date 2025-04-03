@@ -21,11 +21,16 @@ public class PlayerObject : MonoBehaviour
     public TimerScript mirrorTimer;
     public AudioSource mirrorSFX;
     public AudioSource mirrorSwapSFX;
-    //public AudioSource footstepSFX;
+    public AudioSource footstepSFX;
+    public AudioSource deadSFX;
+    private float footstepInterval = 0.5f; // Adjust the interval as needed
+    private float footstepTimer = 0f;
+    public GameObject deathCanvas;
     
 
     private void Update()
     {
+        deathCanvas.SetActive(false);
         if (!isDead) {
             if (!swapWorld) {
                 if (playerPosition.position.y < 0 ) {
@@ -46,19 +51,34 @@ public class PlayerObject : MonoBehaviour
             }
             isMoving = false;
             if(Input.GetKey(KeyCode.A)) {
+             
                 transform.Translate(Vector3.left * Time.deltaTime * speed);
                 charSpriteRenderer.flipX = true;
                 shadowSpriteRenderer.flipX = true;
                 isMoving = true;
-                //footstepSFX.Play();
             }
             if(Input.GetKey(KeyCode.D)) {
                 transform.Translate(Vector3.right * Time.deltaTime * speed);
                 charSpriteRenderer.flipX = false;
                 shadowSpriteRenderer.flipX = false;
                 isMoving = true;
-                //footstepSFX.Play();
             }
+
+            if (isMoving)
+            {
+                footstepTimer += Time.deltaTime;
+                if (footstepTimer >= footstepInterval)
+                    {
+                        footstepSFX.Play();
+                        footstepTimer = 0f; // Reset the timer
+                    }
+            }
+            else
+            {
+                footstepTimer = footstepInterval; // Prevent sound from playing immediately when stopping
+            }
+
+            
 
             if (mirrorTimer.timeLeft == 0) {
                 isDead = true;
@@ -67,6 +87,8 @@ public class PlayerObject : MonoBehaviour
         else {
             animatorChar.Play("CharacterDeath");
             animatorShadow.Play("ShadowDeath");
+            deadSFX.Play();
+            deathCanvas.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -76,7 +98,6 @@ public class PlayerObject : MonoBehaviour
                 mirrorTimer.timeLeft = mirrorTimer.startTime;
                 swapWorld = false;
             }
-            Debug.Log (isDead);
     }
 
     private void RestartLevel()

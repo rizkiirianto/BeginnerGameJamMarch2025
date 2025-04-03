@@ -10,12 +10,15 @@ public class PlayerCharacter : PlayerObject
     {
         thisRigidbody = GetComponent<Rigidbody>();
         thisConstantForce = GetComponent<ConstantForce>();
+
         
     }
     private void Update()
     {
         if (!swapWorld) {
-            if (Input.GetButtonDown("Jump")) Jump();
+            if (Input.GetButtonDown("Jump")) {
+                Jump(); 
+            } 
             isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f);
             // Check for Mirror Swap here
             TryMirrorSwap();

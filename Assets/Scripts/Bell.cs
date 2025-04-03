@@ -14,16 +14,17 @@ public class Bell : SwitchObject
             StartCoroutine(ScaleOverTimeUnderworld(1f,0.5f)); 
             bellSFX.Play();
             obstacleSFX.Play();
+            
         }
     }
 
     
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Bumped");
-            playerHasEntered=true;
+            playerHasEntered = true;
         }
     }
     private void OnTriggerExit(Collider other)

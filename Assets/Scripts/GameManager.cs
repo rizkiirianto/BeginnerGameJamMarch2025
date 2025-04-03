@@ -6,4 +6,6 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(Resources.Load($"Prefabs/Levels/Level {StaticData.level}"));
     }
+
+
 }
