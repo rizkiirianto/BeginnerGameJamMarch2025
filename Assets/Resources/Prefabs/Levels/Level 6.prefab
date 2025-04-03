@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 1010232603848365481}
   - component: {fileID: 2888894557896382627}
   - component: {fileID: 5668319971899560930}
+  - component: {fileID: 4424789072311777051}
   m_Layer: 0
   m_Name: mov platform
   m_TagString: Untagged
@@ -319,9 +320,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xThresholdUp: 5
-  xThresholdDown: 1
+  xThresholdDown: 2
   speedUp: 2
   speedDown: 2
+--- !u!65 &4424789072311777051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074487006107456775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9, y: 0.5, z: 10}
+  m_Center: {x: 0.6, y: -0.7, z: 0}
 --- !u!1 &2189379101053796829
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +917,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 44.781616, y: -0.45, z: 0.2}
+  m_Size: {x: 44.781616, y: -0.45, z: 10}
   m_Center: {x: 11.5, y: -0.55, z: 0}
 --- !u!1 &7247153454764731333
 GameObject:
@@ -1535,6 +1557,10 @@ PrefabInstance:
     - target: {fileID: 2188505727806936864, guid: 4c34830699bd9474ea95cf21c76fac7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -115.3705
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297404897554971545, guid: 4c34830699bd9474ea95cf21c76fac7f, type: 3}
+      propertyPath: m_Size.z
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3297404897554971545, guid: 4c34830699bd9474ea95cf21c76fac7f, type: 3}
       propertyPath: m_Center.x

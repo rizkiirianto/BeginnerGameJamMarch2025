@@ -716,6 +716,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3297404897554971545, guid: 4c34830699bd9474ea95cf21c76fac7f, type: 3}
+      propertyPath: m_Size.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3316943438632411822, guid: 4c34830699bd9474ea95cf21c76fac7f, type: 3}
       propertyPath: m_Name
       value: Border
