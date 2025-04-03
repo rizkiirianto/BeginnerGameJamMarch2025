@@ -81,7 +81,7 @@ public class SwitchObject : MonoBehaviour
 
         public IEnumerator Bridge(float duration, float scale) {
         var startScale = redWall.transform.localScale;
-        var endScale = new Vector3(5,transform.localScale.y,transform.localScale.z);
+        var endScale = new Vector3(0.5f,transform.localScale.y,transform.localScale.z);
         var elapsed = 0f;
         Vector3 targetPosition = new Vector3(redWall.transform.position.x, redWall.transform.position.y, redWall.transform.position.z);
 
