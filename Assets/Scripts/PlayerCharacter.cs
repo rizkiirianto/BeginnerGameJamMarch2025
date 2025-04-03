@@ -78,6 +78,11 @@ public class PlayerCharacter : PlayerObject
     {
         if(other.CompareTag("door")) {
             StaticData.level++;
+            SceneManager.LoadScene(1);
+        }
+        
+        if(other.CompareTag("exit")) {
+            StaticData.level = 1;
             SceneManager.LoadScene(0);
         }
 

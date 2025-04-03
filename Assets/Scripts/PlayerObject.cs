@@ -102,7 +102,7 @@ public class PlayerObject : MonoBehaviour
 
     private void RestartLevel()
     {
-        SceneManager.LoadScene(0); // Reload the scene (GameManager will reload the level)
+        SceneManager.LoadScene(1); // Reload the scene (GameManager will reload the level)
     }
 
     public void TryMirrorSwap()

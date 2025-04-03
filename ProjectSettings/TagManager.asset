@@ -16,6 +16,7 @@ TagManager:
   - platform
   - moving platform
   - Shadow
+  - exit
   layers:
   - Default
   - TransparentFX
