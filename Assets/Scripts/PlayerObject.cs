@@ -81,7 +81,7 @@ public class PlayerObject : MonoBehaviour
 
     public void TryMirrorSwap()
     {
-        if (playerCouldTransfer && Input.GetKeyDown(KeyCode.F))
+        if (playerCouldTransfer && Input.GetKeyDown(KeyCode.E))
         {
             MirrorSwap();
         }
@@ -89,7 +89,7 @@ public class PlayerObject : MonoBehaviour
 
     public void TryMirrorExit()
     {
-        if (playerCouldExit && Input.GetKeyDown(KeyCode.F))
+        if (playerCouldExit && Input.GetKeyDown(KeyCode.E))
         {
             MirrorExit();
         }
