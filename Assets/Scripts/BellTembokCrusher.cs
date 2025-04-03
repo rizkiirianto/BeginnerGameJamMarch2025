@@ -3,6 +3,7 @@ using UnityEngine;
 public class BellTembokCrusher : SwitchObject
 {
     private bool playerHasEntered;
+    public AudioSource bellSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +16,7 @@ public class BellTembokCrusher : SwitchObject
         if(Input.GetKeyDown(KeyCode.E)&&playerHasEntered)
         {
             TembokCrusherSlowDown();
+            bellSFX.Play();
         }
     }
 

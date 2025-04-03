@@ -19,6 +19,9 @@ public class PlayerObject : MonoBehaviour
     public bool playerCouldTransfer;
     public bool playerCouldExit;
     public TimerScript mirrorTimer;
+    public AudioSource mirrorSFX;
+    public AudioSource mirrorSwapSFX;
+    //public AudioSource footstepSFX;
     
 
     private void Update()
@@ -47,12 +50,14 @@ public class PlayerObject : MonoBehaviour
                 charSpriteRenderer.flipX = true;
                 shadowSpriteRenderer.flipX = true;
                 isMoving = true;
+                //footstepSFX.Play();
             }
             if(Input.GetKey(KeyCode.D)) {
                 transform.Translate(Vector3.right * Time.deltaTime * speed);
                 charSpriteRenderer.flipX = false;
                 shadowSpriteRenderer.flipX = false;
                 isMoving = true;
+                //footstepSFX.Play();
             }
 
             if (mirrorTimer.timeLeft == 0) {
@@ -84,6 +89,8 @@ public class PlayerObject : MonoBehaviour
         if (playerCouldTransfer && Input.GetKeyDown(KeyCode.E))
         {
             MirrorSwap();
+            mirrorSFX.Play();
+            mirrorSwapSFX.Play();
         }
     }
 
@@ -92,6 +99,8 @@ public class PlayerObject : MonoBehaviour
         if (playerCouldExit && Input.GetKeyDown(KeyCode.E))
         {
             MirrorExit();
+            mirrorSFX.Play();
+            mirrorSwapSFX.Stop();
         }
     }
 

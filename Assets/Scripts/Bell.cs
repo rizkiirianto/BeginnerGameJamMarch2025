@@ -3,11 +3,8 @@ using UnityEngine;
 public class Bell : SwitchObject
 {
     private bool playerHasEntered;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public AudioSource bellSFX;
+    public AudioSource obstacleSFX;
 
     // Update is called once per frame
     void Update()
@@ -15,6 +12,8 @@ public class Bell : SwitchObject
         if(Input.GetKeyDown(KeyCode.E)&&playerHasEntered)
         {
             StartCoroutine(ScaleOverTimeUnderworld(1f,0.5f)); 
+            bellSFX.Play();
+            obstacleSFX.Play();
         }
     }
 

@@ -5,6 +5,9 @@ public class Candle : SwitchObject
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private bool shadowHasEntered;
     public Animator candleAnimator;
+    public AudioSource candleSFX;
+    public AudioSource obstacleSFX;
+
     void Start()
     {
         
@@ -17,6 +20,8 @@ public class Candle : SwitchObject
         {
             StartCoroutine(ScaleOverTimeOverworld(1f,0.5f)); 
             candleAnimator.Play("CandleDie");
+            candleSFX.Play();
+            obstacleSFX.Play();
         }
     }
 

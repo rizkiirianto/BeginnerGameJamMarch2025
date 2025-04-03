@@ -5,6 +5,7 @@ public class CandleBridges : SwitchObject
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private bool shadowHasEntered;
     public Animator candleAnimator;
+    public AudioSource candleSFX;
     void Start()
     {
         
@@ -17,6 +18,7 @@ public class CandleBridges : SwitchObject
         {
             StartCoroutine(Bridge(1f,0.5f)); 
             candleAnimator.Play("CandleDie");
+            candleSFX.Play();
         }
     }
 

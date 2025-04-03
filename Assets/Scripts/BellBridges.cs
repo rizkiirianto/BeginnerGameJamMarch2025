@@ -3,6 +3,7 @@ using UnityEngine;
 public class BellBridges : SwitchObject
 {
     private bool playerHasEntered;
+    public AudioSource bellSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +16,7 @@ public class BellBridges : SwitchObject
         if(Input.GetKeyDown(KeyCode.E)&&playerHasEntered)
         {
             StartCoroutine(Bridge(1f,0.5f)); 
+            bellSFX.Play();
         }
     }
 
